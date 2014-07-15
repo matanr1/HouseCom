@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Styles</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>List Houses</b></div>
+                    <div class="scroll-panel">
+                        @for (int i = 0; i < 10; i++)
+                        {
+                            <div class="panel-item">
+                                <img class="circle-image" src="~/Content/img/city.png" alt="#" />
+                                <b>House @i</b>
+                                <p>Some description and info text about house @i</p>
+                            </div>
+                        }
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-success btn-sm">Create</button>
+                        <button class="btn btn-default btn-sm">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>House Detailes</b></div>
+                    <div class="panel-body">
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <button id="feedback" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-comment"></span> Feedback</button>
+                        <button id="rate" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-star"></span> Rate</button>
+                        <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-list-alt"></span> View more</button>
+                        <div id="rate">
+                            <div class="btn-group btn-group-sm">
+                                <button id="rank-1" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                                <button id="rank-2" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                                <button id="rank-3" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                                <button id="rank-4" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                                <button id="rank-5" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                            </div>
+                        </div>
+                        <form id="feedback">
+                            <input type="text" class="input-sm form-control" placeholder="Write your feedback here..." />
+                            <span class="">Press <kbd>Enter</kbd> to send</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b>Stage 1</b>
+                        <button class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                    <div class="panel-body">
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-repeat"></span> Reset</button>
+                        <button class="btn btn-primary btn-sm pull-right">Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b>Stage 2</b>
+                        <button class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                    <div class="panel-body">
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+                        <button class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-repeat"></span> Reset</button>
+                        <button class="btn btn-primary btn-sm pull-right">Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b>Stage 3</b>
+                        <button class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                    <div class="panel-body">
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+                        <button class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-repeat"></span> Reset</button>
+                        <button class="btn btn-primary btn-sm pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/js/style.js"></script>
+</body>
+</html>

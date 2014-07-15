@@ -1,0 +1,62 @@
+﻿@using Orchard.Mvc.Html;
+@using Orchard.UI.Resources;
+@{
+    RegisterLink(new LinkEntry {Type = "image/x-icon", Rel = "shortcut icon", Href = Url.Content("~/modules/orchard.themes/Content/orchard.ico")});
+
+    Style.Include("normalize.css");
+    Style.Include("foundation.min.css");
+    Style.Include("site.css");
+    Style.Include("shame.css");
+
+    Script.Include("vendor/modernizr.js").AtHead();
+    Script.Include("vendor/jquery.js").AtHead();
+
+    string title = Convert.ToString(Model.Title);
+    string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+}
+<!DOCTYPE html> 
+<!--[if IE 7]> <html class="gt-ie6 lt-ie8 lt-ie9" lang="@WorkContext.CurrentCulture"> <![endif]-->
+<!--[if IE 8]> <html class="gt-ie7 lt-ie9" lang="@WorkContext.CurrentCulture"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="@WorkContext.CurrentCulture"> <!--<![endif]-->
+<head> 
+    <meta charset="utf-8" />
+    <title>@Html.Title(title, siteName)</title> 
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- iOS & Android icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="shortcut icon" href="img/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileImage" content="img/apple-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#222222">
+
+
+    @Display(Model.Head)
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+<!--[if lt IE 8]>
+    <div style="width:100%;height:9999px;background:#fff;position:fixed;z-index:1000;padding:100px 0 0 0;margin:0;">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="alert-box warning">
+                    <h1>Please, update your browser</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+<![endif]-->
+@* Layout (template) is in the Body zone @ the default position (nothing, zero, zilch) *@
+@Display(Model.Body)
+@Display(Model.Tail)
+</body>
+</html>

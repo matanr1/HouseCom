@@ -1,0 +1,40 @@
+﻿body {
+}
+
+.scroll-panel {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.panel-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+    .panel-item:last-child {
+        border-bottom: none;
+    }
+
+.circle-image {
+    position: relative;
+    float: left;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+form#feedback {
+    padding-top: 10px;
+    display: none;
+    text-align:right;
+}
+
+div#rate {
+    padding-top: 10px;
+    display: none;
+}

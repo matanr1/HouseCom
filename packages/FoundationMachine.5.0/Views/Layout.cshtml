@@ -1,0 +1,220 @@
+@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix) {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : "";}).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+    
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    /* Layout classification based on filled zones
+    ***************************************************************/
+
+    //Add classes to the wrapper div to toggle aside widget zones on and off
+    var asideClass = CalcuClassify(new [] {"AsideFirst", "AsideSecond"}, "aside-"); // for aside-1, aside-2 or aside-12 if any of the aside zones are filled
+    if (HasText(asideClass)) {
+        Model.Classes.Add(asideClass);
+    }
+
+    //Add classes to the wrapper div to toggle tripel widget zones on and off
+    var tripelClass = CalcuClassify(new [] {"TripelFirst", "TripelSecond", "TripelThird"}, "tripel-"); // for tripel-1, triple-2, etc. if any of the tripel zones are filled
+    if (HasText(tripelClass)) {
+        Model.Classes.Add(tripelClass);
+    }
+
+    //Add classes to the wrapper div to toggle quad widget zones on and off
+    var footerQuadClass = CalcuClassify(new [] {"FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth"}, "split-"); // for quad-1, quad-2, etc. if any of the quad zones are filled
+    if (HasText(footerQuadClass)) {
+        Model.Classes.Add(footerQuadClass);
+    }
+
+    WorkContext.Layout.Navigation.Add(New.User(), "10"); // Login and dashboard links
+    WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Orchard
+
+    /* Last bit of code to prep the layout wrapper
+    ***************************************************************/
+    
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
+}
+@tag.StartElement
+  
+<header>
+    <div id="header" class="row">
+        <div class="large-12 columns">
+            @if (Model.Header != null) {
+                @Zone(Model.Header)
+            }
+        </div>
+    </div>
+</header>
+
+<!-- Add .fixed for static top nav or .sticky for only stick at top when scroll down -->
+<div id="navigation" class="contain-to-grid"> 
+    <nav class="top-bar">
+        <ul class="title-area">
+        <li class="name">
+          <h1><a href="~/">@WorkContext.CurrentSite.SiteName </a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            @if (Model.Navigation != null) {
+                @Zone(Model.Navigation)
+            }
+        </section>
+    </nav>
+</div>
+
+@if (Model.Messages != null) {
+<div id="messages">
+    <div class="row">
+        <div class="large-12 columns">
+        @Zone(Model.Messages)
+        </div>
+    </div>
+</div>
+}
+
+@if (Model.Featured != null) {
+<div id="featured">
+    <div class="row">
+        <div class="large-12 columns">
+            @Zone(Model.Featured)
+        </div>
+    </div>
+</div>
+}
+
+@if (Model.TripelFirst != null || Model.TripelSecond != null || Model.TripelThird != null) {
+<div id="tripels">
+    <div class="row">
+        @if (Model.TripelFirst != null) {
+        <div id="tripel-first" class="@(HasText(tripelClass) ? tripelClass == "tripel-12" || tripelClass == "tripel-23" || tripelClass == "tripel-13" ? "large-6 columns" : tripelClass == "tripel-123" ? "large-4 columns" : "large-12 columns" : "large-12 columns")">
+            @Zone(Model.TripelFirst)
+        </div>
+        }
+        @if (Model.TripelSecond != null) {
+        <div id="tripel-second" class="@(HasText(tripelClass) ? tripelClass == "tripel-12" || tripelClass == "tripel-23" || tripelClass == "tripel-13" ? "large-6 columns" : tripelClass == "tripel-123" ? "large-4 columns" : "large-12 columns" : "large-12 columns")">
+            @Zone(Model.TripelSecond)
+        </div>
+        }
+        @if (Model.TripelThird != null) {
+        <div id="tripel-third" class="@(HasText(tripelClass) ? tripelClass == "tripel-12" || tripelClass == "tripel-23" || tripelClass == "tripel-13" ? "large-6 columns" : tripelClass == "tripel-123" ? "large-4 columns" : "large-12 columns" : "large-12 columns")">
+            @Zone(Model.TripelThird)
+        </div>
+        }
+    </div>
+</div>
+}
+
+@if (Model.BeforeMain != null) {
+<div id="before-main">
+    <div class="row">
+        <div class="large-12 columns">
+            @Zone(Model.BeforeMain)
+        </div>
+    </div>
+</div>
+}
+
+<div id="main">
+    <div class="row">
+        @if (Model.AsideFirst != null) {
+        <div id="aside-first" class="large-3 columns">
+            @Zone(Model.AsideFirst)
+        </div>
+        }
+        <div id="content-area" class="@(HasText(asideClass) ? asideClass == "aside-1" || asideClass == "aside-2" ? "large-9 columns" : asideClass == "aside-12" ? "large-6 columns" : "large-12 columns" : "large-12 columns")">
+            @if (Model.BeforeContent != null) {
+            <div id="before-content">
+                @Zone(Model.BeforeContent)
+            </div>
+            }
+            @if (Model.Content != null) {
+            <div id="content">
+                @Zone(Model.Content)
+            </div>
+            }
+            @if (Model.AfterContent != null) {
+            <div id="after-content">
+                @Zone(Model.AfterContent)
+            </div>
+            }
+        </div>
+        @if (Model.AsideSecond != null) {
+        <div id="aside-second" class="large-3 columns">
+            @Zone(Model.AsideSecond)
+        </div>
+        }
+    </div>
+</div>
+
+@if (Model.AfterMain != null) {
+<div id="after-main">
+    <div class="row">
+        <div class="large-12 columns">
+            @Zone(Model.AfterMain)
+        </div>
+    </div>
+</div>
+}
+
+<footer>
+    @if (Model.FooterQuadFirst != null || Model.FooterQuadSecond != null || Model.FooterQuadThird != null || Model.FooterQuadFourth != null) {
+    <div id="quads">
+        <div class="row">
+            <hr/>
+            @if (Model.FooterQuadFirst != null) {
+            <div id="quad-first" class="@(HasText(footerQuadClass) ? footerQuadClass == "split-1" || footerQuadClass == "split-2" || footerQuadClass == "split-3" || footerQuadClass == "split-4" ? "large-12 columns" : footerQuadClass == "split-12" || footerQuadClass == "split-13" || footerQuadClass == "split-14" || footerQuadClass == "split-23" || footerQuadClass == "split-24" || footerQuadClass == "split-34" ? "large-6 columns" : footerQuadClass == "split-123" || footerQuadClass == "split-124" || footerQuadClass == "split-134" || footerQuadClass == "split-234" ? "large-4 columns" : "large-3 columns" : "large-12 columns")">
+                @Zone(Model.FooterQuadFirst)
+            </div>
+            }
+            @if (Model.FooterQuadSecond != null) {
+            <div id="quad-second" class="@(HasText(footerQuadClass) ? footerQuadClass == "split-1" || footerQuadClass == "split-2" || footerQuadClass == "split-3" || footerQuadClass == "split-4" ? "large-12 columns" : footerQuadClass == "split-12" || footerQuadClass == "split-13" || footerQuadClass == "split-14" || footerQuadClass == "split-23" || footerQuadClass == "split-24" || footerQuadClass == "split-34" ? "large-6 columns" : footerQuadClass == "split-123" || footerQuadClass == "split-124" || footerQuadClass == "split-134" || footerQuadClass == "split-234" ? "large-4 columns" : "large-3 columns" : "large-12 columns")">
+                @Zone(Model.FooterQuadSecond)
+            </div>
+            }
+            @if (Model.FooterQuadThird != null) {
+            <div id="quad-third" class="@(HasText(footerQuadClass) ? footerQuadClass == "split-1" || footerQuadClass == "split-2" || footerQuadClass == "split-3" || footerQuadClass == "split-4" ? "large-12 columns" : footerQuadClass == "split-12" || footerQuadClass == "split-13" || footerQuadClass == "split-14" || footerQuadClass == "split-23" || footerQuadClass == "split-24" || footerQuadClass == "split-34" ? "large-6 columns" : footerQuadClass == "split-123" || footerQuadClass == "split-124" || footerQuadClass == "split-134" || footerQuadClass == "split-234" ? "large-4 columns" : "large-3 columns" : "large-12 columns")">
+                @Zone(Model.FooterQuadThird)
+            </div>
+            }
+            @if (Model.FooterQuadFourth != null) {
+            <div id="quad-fourth" class="@(HasText(footerQuadClass) ? footerQuadClass == "split-1" || footerQuadClass == "split-2" || footerQuadClass == "split-3" || footerQuadClass == "split-4" ? "large-12 columns" : footerQuadClass == "split-12" || footerQuadClass == "split-13" || footerQuadClass == "split-14" || footerQuadClass == "split-23" || footerQuadClass == "split-24" || footerQuadClass == "split-34" ? "large-6 columns" : footerQuadClass == "split-123" || footerQuadClass == "split-124" || footerQuadClass == "split-134" || footerQuadClass == "split-234" ? "large-4 columns" : "large-3 columns" : "large-12 columns")">
+                @Zone(Model.FooterQuadFourth)
+            </div>
+            }
+        </div>
+    </div>
+    }
+    @if(Model.Footer != null) {
+    <div id="footer-sub" class="row">
+        <div class="large-12 columns">
+            @Zone(Model.Footer)
+        </div>
+    </div>
+    }
+</footer>
+
+<script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'Themes/FoundationMachine/Scripts/vendor/zepto' : 'Themes/FoundationMachine/Scripts/vendor/jquery') +
+  '.js><\/script>')
+</script>
+<script src="Themes/FoundationMachine/Scripts/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+
+@tag.EndElement
