@@ -1,0 +1,104 @@
+﻿body {
+
+    background: rgba(255, 255, 255, 0.5) url(../img/City2.jpg) no-repeat 0 50%;
+    background-attachment: fixed;
+    background-size: 100%;
+    
+}
+
+.scroll-panel {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.panel-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+    .panel-item:last-child {
+        border-bottom: none;
+    }
+
+.circle-image {
+    position: relative;
+    float: left;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+form#feedback {
+    padding-top: 10px;
+    display: none;
+    text-align: right;
+}
+
+div#rate {
+    padding-top: 10px;
+    display: none;
+}
+
+
+a {
+    color: aqua;
+}
+
+    a:hover {
+        color: ActiveBorder;
+    }
+
+
+#myNav {
+}
+
+footer {
+    position: absolute;
+    height: 100px;
+    background-color: gray;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+
+#bigimg {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-down{
+    position:absolute;
+    right:200px;
+    bottom:200px;
+}
+
+.btn-down > button{
+    border-radius:50%;
+    width:150px;
+    height:150px;
+    background-color:ActiveCaption;
+    border: 1px solid gray;
+}
+
+form#set-point{
+    display:none;
+}
+
+#postsList{
+    max-height:300px !important;
+    overflow-y:auto;
+}
+
+#imgItem{
+    border-radius:50%;
+    height:75px;
+    width:75px;
+    border:1px solid gray;
+}

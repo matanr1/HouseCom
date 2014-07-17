@@ -1,0 +1,35 @@
+/*
+Theme: 
+Author: 
+Copyright: 
+    
+*/
+
+/* Basic Styles
+***********************************************/
+#header {}
+#navigation { margin-bottom: 2em; }
+#messages {}
+#featured {}
+#tripels {}
+  #tripel-first {}
+  #tripel-second {}
+  #tripel-third {}
+#before-main {}
+#main {}
+  #aside-first {}
+  #before-content {}
+  #content {}
+  #after-content {}
+  #aside-second {}
+#after-main {}
+#quads {}
+  #quad-first {}
+  #quad-second {}
+  #quad-third {}
+  #quad-fourth {}
+#footer-sub {}
+
+.welcome { color: white; }
+
+/* Custom Styles

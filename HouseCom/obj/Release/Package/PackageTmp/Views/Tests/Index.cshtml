@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Welcome to Foundation</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+
+</head>
+<body>
+
+    <header class="">
+
+        <nav id="myNav" class="nav navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Buy</a></li>
+                    <li><a href="#">Rent</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Registration</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5">
+                <form id="set-point" class="panel panel-primary">
+                    <div class="panel-heading">This is my form</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>First input</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>second input</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>third input</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="panel-footer"><input type="submit" value="send" /></div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="btn-down">
+        <button id="set-point" class="">Set Point</button>
+    </div>
+
+    <footer class="">
+        <div class="container"></div>
+    </footer>
+
+
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/style.js"></script>
+</body>
+</html>
