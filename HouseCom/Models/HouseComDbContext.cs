@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Data.Entity;
 using System.Linq;
-//using System.Web;
+using System.Web;
 
-using MySql.Data.Entity;
-using MySql.Web;
 using System.Data.Entity;
+using HouseCom.Classes;
 
 namespace HouseCom.Models
 {
@@ -24,7 +22,9 @@ namespace HouseCom.Models
         {
         }
 
-        public DbSet<HouseCom.Classes.House> Houses { get; set; }
+        public DbSet<House> Houses { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
     
     }
 }

@@ -35,3 +35,13 @@ $(document).ready(function () {
     });
 
 });
+
+
+
+
+$(document).ready(function () {
+    $('button#set-point').click(function (e) {
+        $('form#set-point').slideToggle();
+    });
+
+});

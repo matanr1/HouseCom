@@ -22,10 +22,6 @@ namespace HouseCom
             bundles.Add(new StyleBundle("~/Content/css").Include(
            "~/Content/site.css"));
 
-            #region Foundation Bundles
-
-            bundles.Add(Foundation.Scripts());
-            #endregion
         }
     }
 }
