@@ -69,25 +69,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySQL.NET.6.6.4\lib\net40\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySQL.NET.6.6.4\lib\net40\MySql.Data.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity.EF5, Version=6.7.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.Entity.6.7.5\lib\net45\MySql.Data.Entity.EF5.dll</HintPath>
-    </Reference>
-    <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Web, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySQL.NET.6.6.4\lib\net40\MySql.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -219,57 +200,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="App_Readme\Foundation_readme.md" />
-    <Content Include="sass\foundation\test.html" />
-    <Content Include="sass\Site.scss" />
-    <Content Include="sass\foundation\components\_xy-center.scss" />
-    <Content Include="sass\foundation\components\_visibility.scss" />
-    <Content Include="sass\foundation\components\_type.scss" />
-    <Content Include="sass\foundation\components\_top-bar.scss" />
-    <Content Include="sass\foundation\components\_tooltips.scss" />
-    <Content Include="sass\foundation\components\_toolbar.scss" />
-    <Content Include="sass\foundation\components\_thumbs.scss" />
-    <Content Include="sass\foundation\components\_tabs.scss" />
-    <Content Include="sass\foundation\components\_tables.scss" />
-    <Content Include="sass\foundation\components\_switches.scss" />
-    <Content Include="sass\foundation\components\_switch.scss" />
-    <Content Include="sass\foundation\components\_sub-nav.scss" />
-    <Content Include="sass\foundation\components\_split-buttons.scss" />
-    <Content Include="sass\foundation\components\_side-nav.scss" />
-    <Content Include="sass\foundation\components\_reveal-new.scss" />
-    <Content Include="sass\foundation\components\_reveal.scss" />
-    <Content Include="sass\foundation\components\_range-slider.scss" />
-    <Content Include="sass\foundation\components\_progress-bars.scss" />
-    <Content Include="sass\foundation\components\_pricing-tables.scss" />
-    <Content Include="sass\foundation\components\_panels.scss" />
-    <Content Include="sass\foundation\components\_pagination.scss" />
-    <Content Include="sass\foundation\components\_orbit.scss" />
-    <Content Include="sass\foundation\components\_offcanvas.scss" />
-    <Content Include="sass\foundation\components\_magellan.scss" />
-    <Content Include="sass\foundation\components\_labels.scss" />
-    <Content Include="sass\foundation\components\_keystrokes.scss" />
-    <Content Include="sass\foundation\components\_joyride.scss" />
-    <Content Include="sass\foundation\components\_inline-lists.scss" />
-    <Content Include="sass\foundation\components\_icon-bar.scss" />
-    <Content Include="sass\foundation\components\_iconbar.scss" />
-    <Content Include="sass\foundation\components\_grid.scss" />
-    <Content Include="sass\foundation\components\_global.scss" />
-    <Content Include="sass\foundation\components\_forms.scss" />
-    <Content Include="sass\foundation\components\_flex-video.scss" />
-    <Content Include="sass\foundation\components\_dropdown-buttons.scss" />
-    <Content Include="sass\foundation\components\_dropdown.scss" />
-    <Content Include="sass\foundation\components\_clearing.scss" />
-    <Content Include="sass\foundation\components\_buttons.scss" />
-    <Content Include="sass\foundation\components\_button-groups.scss" />
-    <Content Include="sass\foundation\components\_breadcrumbs.scss" />
-    <Content Include="sass\foundation\components\_block-grid.scss" />
-    <Content Include="sass\foundation\components\_alert-boxes.scss" />
-    <Content Include="sass\foundation\components\_accordion.scss" />
-    <Content Include="sass\foundation\_settings.scss" />
     <Content Include="sass\foundation\_functions.scss" />
-    <Content Include="sass\_normalize.scss" />
-    <Content Include="sass\_foundation.scss" />
-    <Content Include="sass\_foundation.mvc.scss" />
     <Content Include="Content\sass\mainStyle.scss" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -311,7 +242,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
