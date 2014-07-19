@@ -1,45 +1,50 @@
-﻿<div id="markerOptions">
+﻿@{
+    var input = "form-control input-sm";
+    var inputClass = new { @class = input };
+    var label = "control-label";
+    var labelClass = new { @class = label };
+}
+
+
+<div id="markerOptions">
     <h4>Set New Marker</h4>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-1 control-label">Lat: </label>
-        <div class=" col-sm-3">
-            <input type="text" id="tbNewMarkerLat" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-new-marker-lat", "Lat:", labelClass)
+            @Html.TextBox("textbox-new-marker-lat", null, new { @class = input, @placeholder = "Set Latitude" })
+            @Html.Label("textbox-new-marker-lng", "Lng:", labelClass)
+            @Html.TextBox("textbox-new-marker-lng", null, new { @class = input, @placeholder = "Set Longitude" })
         </div>
-        <label class="col-sm-1 control-label">Lng: </label>
-        <div class=" col-sm-3">
-            <input type="text" id="tbNewMarkerLng" class="form-control input-sm" />
-        </div>
-        <button id="set-new-marker" class="btn btn-sm btn-success">Set Marker</button>
     </div>
-    <button id="set-center-marker" class="btn btn-sm btn-success">Set Center</button>
-    <button id="clear-all-marker" class="btn btn-sm btn-danger">Clear All markers</button>
+    <div class=" row">
+        <div class="col-sm-12 btn-group btn-group-sm">
+            <button id="set-new-marker" class="btn btn-success">Set Marker</button>
+            <button id="set-center-marker" class="btn btn-success">Set Center</button>
+            <button id="clear-all-marker" class="btn btn-danger">Clear All markers</button>
+        </div>
+    </div>
     <hr />
     <h4>Set many markers</h4>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-2 control-label">How many: </label>
-        <div class=" col-sm-3">
-            <input type="text" id="tbHowManyMarkers" class="form-control input-sm" />
-        </div>
-        <button id="get-bounds" class="btn btn-sm btn-warning">Get Bounds</button>
-        <button id="set-random-markers" class="btn btn-sm btn-success">Set Random Markers</button>
-    </div>
-    <label>Bounds: </label>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-4 control-label">NorthEast (Lat, Lng): </label>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNewNorthEastLat" class="form-control input-sm" />
-        </div>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNewNorthEastLng" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-how-many-markers", "How many:", labelClass)
+            @Html.TextBox("textbox-how-many-markers", null, new { @class = input, @placeholder = "Set Number" })
+            <button id="get-bounds" class="btn btn-sm btn-warning">Get Bounds</button>
+            <button id="set-random-markers" class="btn btn-sm btn-success">Set Random Markers</button>
         </div>
     </div>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-4 control-label">SouthWest (Lat, Lng): </label>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNewSouthWestLat" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-new-north-east-lat", "NorthEast:", labelClass)
+            @Html.TextBox("textbox-new-north-east-lat", null, new { @class = input, @placeholder = "North East Latitude" })
+            @Html.TextBox("textbox-new-north-east-lng", null, new { @class = input, @placeholder = "North East Longitude" })
         </div>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNewSouthWestLng" class="form-control input-sm" />
+    </div>
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-new-south-west-lat", "SouthWest:", labelClass)
+            @Html.TextBox("textbox-new-south-west-lat", null, new { @class = input, @placeholder = "South West Latitude" })
+            @Html.TextBox("textbox-new-south-west-lng", null, new { @class = input, @placeholder = "South West Longitude" })
         </div>
     </div>
 

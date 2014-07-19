@@ -1,41 +1,44 @@
-﻿<div id="mapBasic">
+﻿@{
+    var input = "form-control input-sm";
+    var inputClass = new { @class = input };
+    var label = "control-label";
+    var labelClass = new { @class = label };
+}
+
+<div id="mapBasic">
     <h4>Location</h4>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-2 control-label">Lat: </label>
-        <div class=" col-sm-6">
-            <input type="text" id="tbLat" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-latitude", "Lat:", labelClass)
+            @Html.TextBox("textbox-latitude", null, new { @class = input, @placeholder = "Set Latitude" })
         </div>
     </div>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-2 control-label">Lng: </label>
-        <div class=" col-sm-6">
-            <input type="text" id="tbLng" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-longitude", "Lng:", labelClass)
+            @Html.TextBox("textbox-longitude", null, new { @class = input, @placeholder = "Set Longitude" })
         </div>
     </div>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-2 control-label">Zoom: </label>
-        <div class=" col-sm-6">
-            <input type="text" id="tbZoom" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-zoom", "Zoom:", labelClass)
+            @Html.TextBox("textbox-zoom", null, new { @class = input, @placeholder = "Set Zoom" })
         </div>
     </div>
     <hr />
     <h4>Bounds</h4>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-4 control-label">NorthEast (Lat, Lng): </label>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNorthEastLat" class="form-control input-sm" />
-        </div>
-        <div class=" col-sm-4">
-            <input type="text" id="tbNorthEastLng" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-north-east-lat", "North East:", labelClass)
+            @Html.TextBox("textbox-north-east-lat", null, new { @class = input, @placeholder = "North East Latitude" })
+            @Html.TextBox("textbox-north-east-lng", null, new { @class = input, @placeholder = "North East Longitude" })
         </div>
     </div>
-    <div class="form-group form-group-sm row">
-        <label class="col-sm-4 control-label">SouthWest (Lat, Lng): </label>
-        <div class=" col-sm-4">
-            <input type="text" id="tbSouthWestLat" class="form-control input-sm" />
-        </div>
-        <div class=" col-sm-4">
-            <input type="text" id="tbSouthWestLng" class="form-control input-sm" />
+    <div class="form-inline form-group form-group-sm row">
+        <div class="col-sm-12">
+            @Html.Label("textbox-north-west-lat", "South West:", labelClass)
+            @Html.TextBox("textbox-south-west-lat", null, new { @class = input, @placeholder = "South West Latitude" })
+            @Html.TextBox("textbox-south-west-lng", null, new { @class = input, @placeholder = "South West Longitude" })
         </div>
     </div>
 </div>
