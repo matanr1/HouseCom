@@ -17,8 +17,9 @@ google.maps.Map.prototype.clearMarkers = function () {
 google.maps.Marker.prototype._setMap = google.maps.Marker.prototype.setMap;
 
 google.maps.Marker.prototype.setMap = function (map) {
+    var a = new Array();
     if (map) {
         map.markers[map.markers.length] = this;
-    }
+    } 
     this._setMap(map);
 }

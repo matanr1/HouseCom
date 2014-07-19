@@ -2,6 +2,7 @@
 
 // Map Vars
 var map;
+var geocoder;
 var startCenter = new google.maps.LatLng(31.300512587896986, 35.020294314452656);
 var startZoom = 8;
 // UI items
@@ -15,7 +16,7 @@ function initialize() {
     };
 
     map = new google.maps.Map(document.getElementById('map-api'), mapOptions);
-
+    geocoder = google.maps.Geocoder();
 
     setInitializeValues();
     eventListeners();
@@ -147,4 +148,24 @@ function getRandomLatLng(bounds) {
     var lng = lngMin + Math.random() * lngRange;
 
     return new google.maps.LatLng(lat, lng);
+}
+
+
+// Geocoder
+
+
+function getGeocoder(latLng, marker) {
+    geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                infowindow.setContent(results[1].formatted_address);
+                infowindow.open(map, marker);
+            } else {
+                return 'No results found';
+            }
+        }
+        else {
+            return 'Geocoder failed due to: ' + status;
+        }
+    });
 }
