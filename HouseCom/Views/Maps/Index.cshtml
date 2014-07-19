@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@model HouseCom.Models.PostIndexModel
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Welcome to Foundation</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/Content/css/maps/mapsTests.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMxXXx_oaTw-wxmFL5I-W8jR-Y3eJYtbA"></script>
+</head>
+<body>
+
+
+    <div class="top-ui-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-9 col-lg-5">
+                    <div class="panel panel-default top-ui draggable">
+                        <div class="panel-heading">
+                            Control panel
+                            <button id="homeControlPanel" class="glyphicon glyphicon-home pull-right"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="homeControlPanel">
+                                <button id="mapBasic" class="btn btn-xs btn-primary">Map basic</button>
+                                <button id="markerOptions" class="btn btn-xs btn-danger">Marker Options</button>
+                            </div>
+
+                            @Html.Partial("_MapBasicsPartial")
+                            @Html.Partial("_MarkerPartial")
+
+
+                        </div>
+                        <div class="panel-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map-api"></div>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Maps/mapClass.js"></script>
+    <script src="~/Scripts/Maps/mapTest.js"></script>
+    <script src="~/Scripts/Maps/uiTest.js"></script>
+</body>
+</html>
