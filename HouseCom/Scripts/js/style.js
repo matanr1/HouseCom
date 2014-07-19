@@ -45,3 +45,21 @@ $(document).ready(function () {
     });
 
 });
+/*
+var myimg = document.getElementById("as");
+var images = ["../img/city2.jpg", "../img/jerusalem.jpg", "../img/haifa.jpg"];
+var count = 0;
+
+function imgCarusel()
+{
+    //myimg.setAttribute("style", "background-image:url('" + images[count++].toString() + "')");
+    // myimg.setAttribute("background", images[count++].toString());
+    document.body.style.backgroundImage = "url('"+ images[count++].toString()+ "')";
+    if (count >= images.length)
+    {
+        count = 0;
+    }
+}
+
+setInterval(imgCarusel, 5000);
+*/
