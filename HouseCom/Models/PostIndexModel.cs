@@ -10,5 +10,6 @@ namespace HouseCom.Models
     {
         public List<Post> List { get; set; }
         public Post NewPost { get; set; }
+        public Loaction Loaction { get; set; }
     }
 }

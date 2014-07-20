@@ -7,6 +7,7 @@
 @{
     ViewBag.Title = "Map Details";
     Layout = null;
+    
 }
 
 <!DOCTYPE html>
@@ -44,6 +45,10 @@
                             @Html.Partial("_MarkerPartial")
 
 
+
+
+
+
                         </div>
                         <div class="panel-footer">Footer</div>
                     </div>
@@ -52,6 +57,7 @@
         </div>
     </div>
 
+    @Html.Partial("_NewLoaction", Model.Loaction)
     <div id="map-api"></div>
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
     <script src="~/Scripts/jquery-ui-1.10.4.js"></script>

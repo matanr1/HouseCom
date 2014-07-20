@@ -1,0 +1,17 @@
+﻿@model HouseCom.Classes.Loaction
+<div class="dark">
+    <div class="center">
+        <div class="panel">
+            <div class="panel-heading">New Loaction</div>
+            <div class="panel-body">
+                <form action="@Url.Action("SaveLoaction")" data-maps-save-loaction="true">
+                    @Html.TextBoxFor(m => m.Name)
+
+                    @Html.HiddenFor(m => m.Latitude)
+                    @Html.HiddenFor(m => m.Longitude)
+                    <input type="submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

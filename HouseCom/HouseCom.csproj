@@ -342,6 +342,7 @@
     <Content Include="Views\Maps\Index.cshtml" />
     <Content Include="Views\Maps\_MapBasicsPartial.cshtml" />
     <Content Include="Views\Maps\_MarkerPartial.cshtml" />
+    <Content Include="Views\Maps\_NewLoaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />

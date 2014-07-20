@@ -25,6 +25,8 @@ namespace HouseCom.Models
         public DbSet<House> Houses { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Loaction> Loactions { get; set; }
     
     }
 }

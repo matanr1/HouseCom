@@ -1,20 +1,38 @@
-﻿#map-api{
-    position:absolute;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
-    z-index:0;
+﻿#map-api {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-.top-ui-container{
-    position:absolute;
-    top:50px;
-    left:0px;
-    width:100%;
+.top-ui-container {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100%;
 }
 
-.top-ui{
-    position:relative;
-    z-index:100;
+.top-ui {
+    position: relative;
+    z-index: 100;
+}
+
+.center {
+    display: block;
+    width:400px;
+    margin-top:100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.dark {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128,0.5);
+    z-index: 1000;
 }

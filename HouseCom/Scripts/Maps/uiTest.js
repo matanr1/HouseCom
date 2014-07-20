@@ -34,3 +34,29 @@ function markerOptions() {
     $('div#mapBasic').slideUp();
     $('div#markerOptions').slideDown();
 }
+
+
+$(function () {
+
+    var saveLoaction = function () {
+        var $form = $(this);
+        var $dark = $('.dark');
+        var options = {
+            url: $form.attr('action'),
+            type: $form.attr('method'),
+            data: $form.serialize()
+        };
+
+        $.ajax(options).done(function (data) {
+            var lat = 35; // data["Latitude"];
+            var lng = 31; // data["Longitude"];
+            var position = new google.maps.LatLng(lat, lng);
+            addMarker(position);
+            $dark.hide();
+        });
+
+        return false;
+    };
+
+    $('form[data-maps-save-loaction="true"]').submit(saveLoaction);
+});

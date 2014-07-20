@@ -64,6 +64,7 @@ function setInitializeValues() {
 function eventListeners() {
     if (map != null) {
         google.maps.event.addListener(map, 'click', mapClick);
+        google.maps.event.addListener(map, 'dblclick', mapDoubleClick);
         google.maps.event.addListener(map, 'center_changed', mapCenterChanged);
         google.maps.event.addListener(map, 'zoom_changed', mapZoomChanged);
     }
@@ -73,6 +74,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 // Event functions
+
+function mapDoubleClick(e) {
+    var position = e.latLng;
+    $('#Latitude').val(e.latLng.lat());
+    $('#Longitude').val(e.latLng.lng());
+    $('.dark').show();
+}
 
 function mapClick(e) {
     $('#textbox-new-marker-lat').get(0).value = e.latLng.lat();
