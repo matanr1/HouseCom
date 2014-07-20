@@ -291,6 +291,7 @@
     <Content Include="Scripts\js\style.js" />
     <Content Include="Scripts\Maps\mapClass.js" />
     <Content Include="Scripts\Maps\mapTest.js" />
+    <Content Include="Scripts\Maps\markerclusterer.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />

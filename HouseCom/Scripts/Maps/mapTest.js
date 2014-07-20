@@ -6,6 +6,7 @@ var geocoder;
 var infowindow = new google.maps.InfoWindow();
 var startCenter = new google.maps.LatLng(31.300512587896986, 35.020294314452656);
 var startZoom = 8;
+var markerCluster = null;
 // UI items
 
 
@@ -21,6 +22,27 @@ function initialize() {
 
     setInitializeValues();
     eventListeners();
+}
+
+function clusterTest() {
+    var markers = map.getMarkers();
+    var a = markers[0].getPosition();
+    //for (var i = 0; i < 100; i++) {
+    //    var dataPhoto = data.photos[i];
+    //    var latLng = new google.maps.LatLng(dataPhoto.latitude,
+    //        dataPhoto.longitude);
+    //    var marker = new google.maps.Marker({
+    //        position: latLng
+    //    });
+    //    markers.push(marker);
+    //}
+    if (!markerCluster) {
+        markerCluster = new MarkerClusterer(map, markers);
+    }
+    else {
+        markerCluster.clearMarkers();
+        markerCluster.addMarkers(markers, true);
+    }
 }
 
 
@@ -104,6 +126,7 @@ function setCenterMarker() {
 
 function clearAllMarker() {
     map.clearMarkers();
+    markerCluster.clearMarkers();
 }
 
 function getBounds() {
@@ -125,6 +148,8 @@ function setRandomMarkers() {
     for (var i = 0; i < many; i++) {
         addMarker(getRandomLatLng(bounds));
     }
+    clusterTest();
+
 }
 
 
@@ -136,6 +161,7 @@ function addMarker(position) {
     marker.addListener('click', function () {
         getGeocoder(this.getPosition(), this);
     });
+
 }
 
 function getRandomLatLng(bounds) {
@@ -178,3 +204,5 @@ function setInfoWindow(results) {
     html += '</ol>';
     return html;
 }
+
+
