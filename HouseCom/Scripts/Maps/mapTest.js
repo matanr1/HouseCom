@@ -37,7 +37,17 @@ function clusterTest() {
     //    markers.push(marker);
     //}
     if (!markerCluster) {
-        markerCluster = new MarkerClusterer(map, markers);
+        var options = {
+            gridSize: 60,
+            minimumClusterSize: 2,
+            maxZoom: null,
+            //styles: [],
+            //imagePath:
+            //imageExtension:
+            //zoomOnClick:
+            //averageCenter:
+        };
+        markerCluster = new MarkerClusterer(map, markers, options);
     }
     else {
         markerCluster.clearMarkers();

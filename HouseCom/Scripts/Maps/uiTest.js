@@ -48,8 +48,8 @@ $(function () {
         };
 
         $.ajax(options).done(function (data) {
-            var lat = 35; // data["Latitude"];
-            var lng = 31; // data["Longitude"];
+            var lat = data["Latitude"];
+            var lng = data["Longitude"];
             var position = new google.maps.LatLng(lat, lng);
             addMarker(position);
             $dark.hide();

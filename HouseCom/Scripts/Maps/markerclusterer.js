@@ -752,6 +752,7 @@ MarkerClusterer.prototype.distanceBetweenPoints_ = function (p1, p2) {
  * @param {google.maps.Marker} marker The marker to add.
  * @private
  */
+
 MarkerClusterer.prototype.addToClosestCluster_ = function (marker) {
     var distance = 40000; // Some large number
     var clusterToAddTo = null;
@@ -799,7 +800,6 @@ MarkerClusterer.prototype.createClusters_ = function () {
         }
     }
 };
-
 
 /**
  * A cluster that contains markers.

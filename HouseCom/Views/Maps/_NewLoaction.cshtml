@@ -6,7 +6,6 @@
             <div class="panel-body">
                 <form action="@Url.Action("SaveLoaction")" data-maps-save-loaction="true">
                     @Html.TextBoxFor(m => m.Name)
-
                     @Html.HiddenFor(m => m.Latitude)
                     @Html.HiddenFor(m => m.Longitude)
                     <input type="submit" />

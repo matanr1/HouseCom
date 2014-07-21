@@ -9,7 +9,8 @@ namespace HouseCom
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -19,8 +20,28 @@ namespace HouseCom
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/maps").Include(
+                        "~/Scripts/Maps/uiTest.js",
+                        "~/Scripts/Maps/mapClass.js",
+                        "~/Scripts/Maps/mapTest.js",
+                        "~/Scripts/Maps/markerclusterer.js"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                        "~/Content/bootstrap.css",
+                        "~/Content/bootstrap-theme.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-           "~/Content/site.css"));
+                        "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/maps").Include(
+                        "~/Content/css/maps/mapsTests.css"));
+
+            bundles.Add(new StyleBundle("~/Content/style").Include(
+                        "~/Content/style.css"));
 
         }
     }

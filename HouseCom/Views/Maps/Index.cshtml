@@ -7,7 +7,7 @@
 @{
     ViewBag.Title = "Map Details";
     Layout = null;
-    
+
 }
 
 <!DOCTYPE html>
@@ -18,10 +18,11 @@
     <title>@ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="~/Content/css/maps/mapsTests.css" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMxXXx_oaTw-wxmFL5I-W8jR-Y3eJYtbA"></script>
+
+    @Styles.Render("~/Content/bootstrap");
+    @Styles.Render("~/Content/maps");
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMxXXx_oaTw-wxmFL5I-W8jR-Y3eJYtbA"></script>
 </head>
 <body>
 
@@ -59,12 +60,11 @@
 
     @Html.Partial("_NewLoaction", Model.Loaction)
     <div id="map-api"></div>
-    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.10.4.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/Maps/mapClass.js"></script>
-    <script src="~/Scripts/Maps/markerclusterer.js"></script>
-    <script src="~/Scripts/Maps/mapTest.js"></script>
-    <script src="~/Scripts/Maps/uiTest.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/maps")
 </body>
 </html>
