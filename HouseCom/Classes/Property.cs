@@ -13,6 +13,8 @@ namespace HouseCom.Classes
         public string city { get; set; }
         public bool state { get; set; }
         public bool ForSell { get; set; }
+        public bool forRent { get; set; }
+        public Marker mark {get; set;}
         public DateTime DateCreated { get; set; }
         public int price { get; set; }
     }
