@@ -167,12 +167,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Loaction.cs" />
     <Compile Include="Classes\Marker.cs" />
     <Compile Include="Classes\Post.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\Property.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
