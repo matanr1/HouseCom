@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HouseCom.Classes.Customer>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.CustomerId)</th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.DateCreated)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr id="customer-row" data-customer-id="@item.CustomerId">
+            <td>@Html.DisplayFor(modelItem => item.CustomerId)</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.DateCreated)</td>
+        </tr>
+    }
+</table>

@@ -177,6 +177,7 @@
     <Compile Include="Classes\Property.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerPropertyController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Classes\House.cs" />
@@ -190,6 +191,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomerPropertyModel.cs" />
     <Compile Include="Models\HouseComDbContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\PostIndexModel.cs" />
@@ -296,6 +298,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\customerProperty.js" />
     <Content Include="Scripts\js\style.js" />
     <Content Include="Scripts\Maps\mapClass.js" />
     <Content Include="Scripts\Maps\mapTest.js" />
@@ -351,6 +354,13 @@
     <Content Include="Views\Maps\_MapBasicsPartial.cshtml" />
     <Content Include="Views\Maps\_MarkerPartial.cshtml" />
     <Content Include="Views\Maps\_NewLoaction.cshtml" />
+    <Content Include="Views\CustomerProperty\Index.cshtml" />
+    <Content Include="Views\CustomerProperty\_CustomersList.cshtml" />
+    <Content Include="Views\CustomerProperty\_PropertiesList.cshtml" />
+    <Content Include="Views\CustomerProperty\_CreateCustomer.cshtml" />
+    <Content Include="Views\CustomerProperty\_CreateProperty.cshtml" />
+    <Content Include="Views\CustomerProperty\_ViewCustomer.cshtml" />
+    <Content Include="Views\CustomerProperty\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />

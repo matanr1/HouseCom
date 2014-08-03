@@ -10,6 +10,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap");
 
     @RenderSection("head", required: false)
     @Scripts.Render("~/bundles/modernizr")
@@ -19,6 +20,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @*Use the Scripts section to define page specific scripts*@
+
+    <script src="~/Scripts/js/customerProperty.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

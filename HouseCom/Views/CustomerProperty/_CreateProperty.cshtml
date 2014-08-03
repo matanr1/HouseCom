@@ -1,0 +1,15 @@
+﻿@model HouseCom.Classes.Property
+@using (Html.BeginForm("CreateProperty", "CustomerProperty", Model))
+{
+    <h3>Create Property</h3>
+    <div>
+        @Html.LabelFor(model => model.City)
+        @Html.TextBoxFor(model => model.City)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Price)
+        @Html.TextBoxFor(model => model.Price)
+    </div>
+    <input type="submit" />
+}
+

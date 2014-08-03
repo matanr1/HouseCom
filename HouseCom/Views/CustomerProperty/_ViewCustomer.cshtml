@@ -1,0 +1,17 @@
+﻿@model HouseCom.Classes.Customer
+
+<form action="@Url.Action("SaveLoaction")" data-maps-save-loaction="true">
+    <input type="submit" />
+</form>
+
+
+
+@{
+    if (Model.CustomerId > 0)
+    {
+        <div>
+            @Html.DisplayNameFor(model => model.CustomerId)
+            @Html.DisplayNameFor(model=>model.CustomerId)
+        </div>
+    }
+}

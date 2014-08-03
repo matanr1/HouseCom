@@ -22,6 +22,10 @@ namespace HouseCom.Models
         {
         }
 
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Property> Properties { get; set; }
+
         public DbSet<House> Houses { get; set; }
 
         public DbSet<Post> Posts { get; set; }

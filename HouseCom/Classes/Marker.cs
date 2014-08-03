@@ -7,12 +7,13 @@ namespace HouseCom.Classes
 {
     public class Marker
     {
-        public int Id { get; set; }
+        public int MarkerId { get; set; }
 
-        public int userId { get; set; }
+        public int PropertyId { get; set; }
+        public virtual Property Property { get; set; }
 
-        public Tuple<double, double> LatLng;
- 
+        public Tuple<double, double> LatLng { get; set; }
+
 
     }
 }

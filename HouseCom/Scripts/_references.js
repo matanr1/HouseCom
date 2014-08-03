@@ -29,3 +29,4 @@
 /// <reference path="../obj/release/package/packagetmp/scripts/maps/uitest.js" />
 /// <reference path="customer/main.js" />
 /// <reference path="customer/ajaxdata.js" />
+/// <reference path="js/customerproperty.js" />

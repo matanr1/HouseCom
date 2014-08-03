@@ -1,0 +1,23 @@
+﻿@model HouseCom.Models.CustomerPropertyModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">@Html.Partial("_CustomersList", Model.Customers)</div>
+        <div class="col-lg-6">@Html.Partial("_PropertiesList", Model.Properties)</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">@Html.Partial("_CreateCustomer", Model.Customer)</div>
+        <div class="col-lg-6">@Html.Partial("_CreateProperty", Model.Property)</div>
+    </div>
+    <div class="row">
+        @*View Customer*@
+        <div class="col-lg-6">@Html.Partial("_ViewCustomer", Model.Customer)</div>
+        <div class="col-lg-6"></div>
+    </div>
+</div>
+

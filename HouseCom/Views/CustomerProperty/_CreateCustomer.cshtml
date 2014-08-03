@@ -1,0 +1,14 @@
+﻿@model HouseCom.Classes.Customer
+@using (Html.BeginForm("CreateCustomer", "CustomerProperty", Model))
+{
+    <h3>New Customer</h3>
+    <div>
+        @Html.LabelFor(model => model.FirstName)
+        @Html.TextBoxFor(model => model.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.LastName)
+        @Html.TextBoxFor(model => model.LastName)
+    </div>
+    <input type="submit" />
+}
